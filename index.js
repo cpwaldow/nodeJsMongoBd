@@ -19,14 +19,13 @@ app.get('/', (req, res) => {
   res.json({ message: 'Olá, Express!' });
 });
 
-// problema com o login! MongoServerError: bad auth : Authentication failed.
-const DB_USER = 'Carlos';
-const DB_PASSWORD = encodeURIComponent('$8RyuHSvU$dkbhP');
+const DB_USER = 'carlos';
+const DB_PASSWORD = encodeURIComponent('N1CYw1C2GYVkrsYz');
 
 // entregar uma porta
 mongoose
   .connect(
-    `mongodb+srv://${DB_USER}:${DB_PASSWORD}@apicluster.pi20o.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`,
+    `mongodb+srv://${DB_USER}:${DB_PASSWORD}@apicluster.hbc8w.mongodb.net/bancodaapi?retryWrites=true&w=majority`,
   )
   .then(() => {
     console.log('Conectamos ao MongoDB!');
