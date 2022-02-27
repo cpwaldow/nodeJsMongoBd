@@ -1,4 +1,5 @@
 // config  inicial
+require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
 const app = express();
@@ -24,8 +25,8 @@ app.get('/', (req, res) => {
   res.json({ message: 'Olá, Express!' });
 });
 
-const DB_USER = 'carlos';
-const DB_PASSWORD = encodeURIComponent('N1CYw1C2GYVkrsYz');
+const DB_USER = process.env.DB_USER;
+const DB_PASSWORD = encodeURIComponent(process.env.DB_PASSWORD);
 
 // entregar uma porta
 mongoose
